@@ -1,0 +1,62 @@
+@import 'tailwindcss';
+
+
+@theme{
+    --primary: rgb(47, 93, 138);
+    --secondary: rgb(56 200 230 / 72%);
+}
+@layer base {
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: url(/bg.svg) center 120% / auto no-repeat, linear-gradient(rgb(249, 255, 255) 0%, rgb(56, 200, 230) 100%); 
+    }
+
+    @media (max-width:768px) {
+        body{
+            justify-content: start;
+        }
+    }
+    html.dark body {
+        background:url(/darkBg.svg) center 120% / auto no-repeat, linear-gradient(rgb(3, 16, 39) 0%, rgb(2, 16, 29) 100%); 
+    }
+ 
+
+    section {
+        @apply my-10
+    }
+
+    button {
+        @apply bg-blue-300 font-semibold p-2 rounded-md my-2 ring-3 text-white ring-white cursor-pointer transition-all duration-300 focus:ring-blue-200 focus:ring-4 hover:ring-blue-200 active:ring-blue-200
+    }
+
+    .active-search {
+        @apply !border-(--secondary) shadow-xl
+    }
+
+    .overflow-x-auto::-webkit-scrollbar {
+        width: 100px;
+    }
+
+    .overflow-x-auto::-webkit-scrollbar-track {
+        @apply bg-transparent
+    }
+
+    .overflow-x-auto::-webkit-scrollbar-thumb {
+        @apply bg-blue-400
+    }
+
+    .overflow-x-auto ::-webkit-scrollbar-thumb:hover {
+        @apply bg-blue-500
+    }
+    .infoHead{
+        @apply text-[14px] text-blue-200
+    }
+    .infoDesc{
+        @apply text-[14px]
+    }
+          
+       
+}
